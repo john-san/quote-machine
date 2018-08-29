@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/scripts/app.js',
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
@@ -7,11 +7,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
-        ]
+        test: /\.scss$/,
+          use: [
+            "style-loader", // creates style nodes from JS strings
+            "css-loader", // translates CSS into CommonJS
+            "sass-loader" // compiles Sass to CSS, using Node Sass by default
+          ]
       },
       {
         test: /\.js$/,
