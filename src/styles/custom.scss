@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$background-color: blue;
+body {
+	background-color: $background-color;
+}
+
+#quote-box {
+	background: white;
+	margin: 150px auto 0 auto;
+	padding: 50px 0;
+	text-align: center;
+	border-radius: 8px;
+	max-width: 450px;
+}
