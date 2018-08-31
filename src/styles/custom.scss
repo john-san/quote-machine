@@ -23,8 +23,15 @@ body {
 	font-size: 30px;
 }
 
+#text:before {
+  content: "\" ";
+}
+
 #author {
 	text-align: right;
+}
+#author:before {
+  content: "- ";
 }
 
 .btn-row {
@@ -45,4 +52,19 @@ body {
   li:last-of-type {
   	margin-right: 0;
   }
+}
+
+#twitterBtn, #tumblrBtn {
+  height: 36px;
+  width: 36px;
+}
+#twitterBtn.fa-twitter:before {
+  position: relative;
+  right: 2px;
+}
+
+
+footer {
+  text-align: center;
+  color: #fff;
 }
