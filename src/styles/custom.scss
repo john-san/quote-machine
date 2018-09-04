@@ -2,10 +2,10 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-
 @import "node_modules/bootstrap/scss/bootstrap";
 
 $background-color: blue;
+
 body {
 	background-color: $background-color;
 	font-size: 18px;
@@ -26,7 +26,7 @@ body {
 
 #text:before {
   font-family: 'Font Awesome 5 Free';
-  content: "\f10d ";
+  content: "\f10d  ";
 }
 
 #author {
@@ -56,13 +56,17 @@ body {
   }
 }
 
-#twitterBtn, #tumblrBtn {
+#tweet-quote, #tumblrBtn {
   height: 36px;
   width: 36px;
 }
-#twitterBtn.fa-twitter:before {
+#tweet-quote.fa-twitter:before {
   position: relative;
   right: 2px;
+}
+
+#new-quote {
+  font-size: 16px;
 }
 
 

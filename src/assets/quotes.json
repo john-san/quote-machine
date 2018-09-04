@@ -1,0 +1,14 @@
+export default {
+    "Quotes": {
+        "Dwayne Johnson": [
+            {"quote":"Success isn’t overnight. It’s when everyday you get a little better than the day before. It all adds up."},
+            {"quote":"Success isn’t always about greatness, it’s about consistency. Consistent, hard work gains success."},
+            {"quote":"Blood, sweat and respect. First two you give, last one you earn."}
+        ],
+        "Will Smith": [
+            {"quote":"Being realistic is the most commonly traveled road to mediocrity."},
+            {"quote":"Talent you have naturally. Skill is only developed by hours and hours and hours of beating on your craft."},
+            {"quote":"I never viewed myself as particularly talented. Where I excel is ridiculous, sickening, work ethic. You know, while the other guy’s sleeping, I’m working."}
+        ]
+    }
+}
