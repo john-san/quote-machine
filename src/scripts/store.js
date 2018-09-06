@@ -1,7 +1,4 @@
-import { Quotes } from '../assets/quotes.json';
+const quotes = require('../assets/quotes.json');
+const store = quotes;
 
-
-const store = Quotes;
-
-
-export { store };
+export default { store };
