@@ -1,13 +1,12 @@
 require('../styles/custom.scss');
 import React from 'react'
-import { Presentational } from './react/presentational.js';
-import { store } from './redux/store.js';
 import ReactDOM from 'react-dom'
+import Presentational from './react/presentational';
+import store from './redux/store';
+
 
 console.log(store);
-const currentState = store.getState();
-console.log(currentState);
+console.log(store.getState());
 
 const root = document.getElementById('root');
-// const presentational = new Presentational;
 ReactDOM.render(<Presentational />, root);

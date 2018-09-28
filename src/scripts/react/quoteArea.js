@@ -9,11 +9,11 @@ class QuoteArea extends Component {
     return (
       <div>
         <div id="text">Quote here</div>
-        <div id="author" class="my-2">Author</div>
+        <div id="author" className="my-2">Author</div>
       </div>
     );
   }
 };
 
 
-export { QuoteArea };
+export default QuoteArea;

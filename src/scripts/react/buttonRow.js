@@ -7,15 +7,15 @@ class ButtonRow extends Component {
   }
   render() {
     return (
-      <div class="clearfix mt-4">
-  			<div class="float-left">
-  			  <ul class="btn-row">
-  			    <li><a id="tweet-quote" class="btn btn-success fab fa-twitter" href="#"></a></li>
-  			    <li><a id="tumblrBtn" class="btn btn-success fab fa-tumblr" href="#"></a></li>
+      <div className="clearfix mt-4">
+  			<div className="float-left">
+  			  <ul className="btn-row">
+  			    <li><a id="tweet-quote" className="btn btn-success fab fa-twitter" href="#"></a></li>
+  			    <li><a id="tumblrBtn" className="btn btn-success fab fa-tumblr" href="#"></a></li>
   			  </ul>
   			</div>
-  			<div class="float-right">
-  			  <a id="new-quote" class="btn btn-success" href="#">New quote</a>
+  			<div className="float-right">
+  			  <a id="new-quote" className="btn btn-success" href="#">New quote</a>
   			</div>
 			</div>
     );
@@ -23,4 +23,4 @@ class ButtonRow extends Component {
 };
 
 
-export { ButtonRow };
+export default ButtonRow;

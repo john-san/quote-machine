@@ -1,7 +1,6 @@
 import { createStore } from 'redux'
 
 const quotes = require('../../assets/quotes.json');
-
 const defaultState = quotes;
 
 const myReducer = (state = defaultState) => {
@@ -10,4 +9,5 @@ const myReducer = (state = defaultState) => {
 
 const store = createStore(myReducer);
 
-export { store };
+
+export default store;
