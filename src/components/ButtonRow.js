@@ -16,11 +16,11 @@ export default function ButtonRow({getData, quote, author}) {
           <a href={`https://twitter.com/intent/tweet?text="${quote}" - ${author}`}
             target="_blank"
             id="tweet-quote"
-            class="btn btn-primary"
+            className="btn btn-primary"
             rel="noopener noreferrer">Tweet
           </a>
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

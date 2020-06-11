@@ -6,8 +6,10 @@ import QuoteBox from './components/QuoteBox';
 import ButtonRow from './components/ButtonRow';
 import Footer from './components/Footer';
 
+
 function App() {
   const [currentQuote, setCurrentQuote] = useState({});
+
 
   // grab quote from quote API and update currentQuote
   function getData() {
@@ -16,11 +18,11 @@ function App() {
       "url":"http://quotes.stormconsultancy.co.uk/random.json",
       })
       .then((response)=>{
-        console.log(response)
-        setCurrentQuote(response.data)
+        console.log(response);
+        setCurrentQuote(response.data);
       })
       .catch((error)=>{
-        console.log(error)
+        console.log(error);
       }
     )
   }
@@ -37,15 +39,17 @@ function App() {
       <Jumbotron className="App text-center">
         <h1>Quote Machine</h1>
         
+        
         <QuoteBox 
           author={author}
           quote={quote}
         />
 
+
         <ButtonRow
             author={author}
             quote={quote}
-            getData={() => getData()} 
+            getData={() =>getData()} 
         />
       </Jumbotron>
       <Footer />

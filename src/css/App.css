@@ -33,6 +33,15 @@ body {
   min-width: 150px;
 }
 
+.example-enter, .example-appear {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active, .example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
 @media (min-width: 768px) {
   #new-quote {
     margin-bottom: 0;
