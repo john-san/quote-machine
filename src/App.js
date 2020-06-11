@@ -1,24 +1,19 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './css/App.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Jumbotron } from 'react-bootstrap';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      data: {}
-    }
-  }
+function App() {
+  const [currentQuote, setCurrentQuote] = useState({});
 
-  getData = () => {
+  function getData() {
     axios({
       "method":"GET",
       "url":"http://quotes.stormconsultancy.co.uk/random.json",
       })
       .then((response)=>{
         console.log(response)
-        this.setState({ data : response.data })
+        setCurrentQuote(response.data)
       })
       .catch((error)=>{
         console.log(error)
@@ -26,31 +21,41 @@ class App extends Component {
     )
   }
 
-  render() {
-    const { author, quote } = this.state.data;
+  // run getData on initial render
+  useEffect(() => {
+    getData();
+  }, [])
 
-    return (
-      <div className="App mt-5 text-center">
-        <h1>Quote Machine</h1>
-        <div id="quote-box" className="p-5">
-          <div id="text" className="text-left">{quote}</div>
-          <div id="author" className="text-right">{author}</div>
-          <Container>
-            <Row>
-              <Col>
-                <Button 
-                    id="new-quote" 
-                    variant="success"
-                    onClick={this.getData}>New Quote
-                </Button>
-              </Col>
-              <Col><Button id="tweet-quote">Tweet</Button></Col>
-            </Row>
-          </Container>
-        </div>
+  const { author, quote } = currentQuote;
+
+  return (
+    <Jumbotron className="App mt-5 text-center">
+      <h1>Quote Machine</h1>
+      <div id="quote-box" className="p-5">
+        <div id="text">{quote}</div>
+        <div id="author" className="text-right">{author}</div>
+        <Container className="mt-3">
+          <Row>
+            <Col xs={12} sm={6}>
+              <Button 
+                  id="new-quote" 
+                  variant="success"
+                  onClick={() => getData()}>New Quote
+              </Button>
+            </Col>
+            <Col xs={12} sm={6}>
+              <a href={`https://twitter.com/intent/tweet?text="${quote}" - ${author}`}
+                target="_blank"
+                id="tweet-quote"
+                class="btn btn-primary">Tweet
+              </a>
+            </Col>
+          </Row>
+        </Container>
       </div>
-    );
-  }
+      <h4 className="text-center">Made by <a href="https://github.com/john-san" target="_blank">John Nguyen</a></h4>
+    </Jumbotron>
+  );
   
 }
 
