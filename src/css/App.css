@@ -1,0 +1,18 @@
+#text {
+  min-height: 100px;
+}
+
+#text::before {
+  content: "\"";
+  font-size: 24px;
+}
+
+#text::after {
+  content: "\"";
+  font-size: 24px;
+}
+
+#author::before {
+  content: "- ";
+  font-size: 24px;
+}
