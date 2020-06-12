@@ -9,22 +9,23 @@ import Footer from './components/Footer';
 
 function App() {
   const [currentQuote, setCurrentQuote] = useState({});
-
+  const [isDisabled, toggleDisabled] = useState(false);
 
   // grab quote from quote API and update currentQuote
   function getData() {
+    toggleDisabled(true);
     axios({
       "method":"GET",
       "url":"http://quotes.stormconsultancy.co.uk/random.json",
       })
-      .then((response)=>{
+      .then((response)=> {
         console.log(response);
         setCurrentQuote(response.data);
       })
-      .catch((error)=>{
+      .catch((error)=> {
         console.log(error);
-      }
-    )
+      })
+      .finally(() => setTimeout(() => toggleDisabled(false), 300))
   }
 
   // run getData on initial render
@@ -36,10 +37,8 @@ function App() {
 
   return (
     <div>
-      <Jumbotron className="App text-center">
+      <Jumbotron className="text-center">
         <h1>Quote Machine</h1>
-        
-        
         <QuoteBox 
           author={author}
           quote={quote}
@@ -47,9 +46,10 @@ function App() {
 
 
         <ButtonRow
-            author={author}
-            quote={quote}
-            getData={() =>getData()} 
+          author={author}
+          quote={quote}
+          getData={() =>getData()} 
+          isDisabled={isDisabled}
         />
       </Jumbotron>
       <Footer />

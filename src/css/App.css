@@ -1,9 +1,10 @@
 body {
   font-size: 18px;
   color: #39626F;
+  background: #E9ECEF;
 }
 #text {
-  min-height: 100px;
+  min-height: 150px;
 }
 
 #text::before {
@@ -43,6 +44,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  #text {
+    min-height: 100px;
+  }
+
   #new-quote {
     margin-bottom: 0;
   }
