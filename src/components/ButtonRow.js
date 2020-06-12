@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-export default function ButtonRow({getData, quote, author, isDisabled}) {
+export default function ButtonRow({displayQuote, quote, author, isDisabled}) {
 
   return (
     <Container>
@@ -10,7 +10,7 @@ export default function ButtonRow({getData, quote, author, isDisabled}) {
           <Button 
               id="new-quote" 
               variant="success"
-              onClick={() => getData()}
+              onClick={() => displayQuote()}
               disabled={isDisabled}>New Quote
           </Button>
         </Col>

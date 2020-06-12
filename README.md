@@ -2,7 +2,7 @@
 
 ## Project #1/6: Build a Random Quote Machine
 
-**Summary:** This is a random quote generate built with React.  It grabs data from an online API and displays the quote.
+**Summary:** This is a random quote generate built with React.  It grabs a random quote from a local database and displays it.
 
 **How to use**:
 
