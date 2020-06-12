@@ -13,19 +13,19 @@ function App() {
 
   // grab quote from quote API and update currentQuote
   function getData() {
-    toggleDisabled(true);
+    toggleDisabled(true); // disable button
     axios({
       "method":"GET",
       "url":"http://quotes.stormconsultancy.co.uk/random.json",
       })
       .then((response)=> {
-        console.log(response);
+        // console.log(response);
         setCurrentQuote(response.data);
       })
       .catch((error)=> {
         console.log(error);
       })
-      .finally(() => setTimeout(() => toggleDisabled(false), 300))
+      .finally(() => setTimeout(() => toggleDisabled(false), 300)) // re-enable button
   }
 
   // run getData on initial render
