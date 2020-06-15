@@ -1,16 +1,24 @@
 body {
-  font-size: 18px;
+  font-size: 16px;
   color: #39626F;
   background: #E9ECEF;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh
+}
 
-#text::before {
+#quote-box {
+  padding: 30px 0;
+}
+#text p::before {
   content: "\"";
   font-size: 24px;
 }
 
-#text::after {
+#text p::after {
   content: "\"";
   font-size: 24px;
 }
@@ -42,7 +50,18 @@ body {
 }
 
 @media (min-width: 768px) {
-  
+  body {
+    font-size: 18px;
+  }
+
+  #mainContent {
+    width: 850px;
+    margin: 0 auto;
+  }
+
+  #quote-box {
+    min-height: 235px;
+  }
 
   #new-quote {
     margin-bottom: 0;

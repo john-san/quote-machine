@@ -52,8 +52,8 @@ function App() {
   const { character: author, quote } = currentQuote;
   
   return (
-    <div>
-      <Jumbotron className="text-center">
+    <div id="app">
+      <Jumbotron id="mainContent" className="text-center">
         <h1>Quote Machine</h1>
 
         <QuoteBox 

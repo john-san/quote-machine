@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <h4 className="footer text-center mt-auto">Made by <a href="https://github.com/john-san">John Nguyen</a></h4>
+    <div className="footer text-center">
+      <h2>Made by <a href="https://github.com/john-san">John Nguyen</a></h2>
+    </div>
   );
 }

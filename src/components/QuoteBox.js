@@ -4,7 +4,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 export default function QuoteBox({quote, author}) {
   return (
-    <div id="quote-box" className="p-5">
+    <div id="quote-box" className="p-md-5">
       {
         quote ?
           <>
@@ -14,7 +14,7 @@ export default function QuoteBox({quote, author}) {
               transitionAppear={true}
               transitionAppearTimeout={500}
               transitionLeave={false}>
-              <div id="text" key={quote}>{quote}</div>
+              <div id="text" key={quote}><p>{quote}</p></div>
               <div id="author" className="text-right" key={author}>{author}</div>
             </CSSTransitionGroup>
           </>
