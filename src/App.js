@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import {default as data} from './quotes.json';
+// import {default as data} from './quotes.json';
 import './css/App.css';
 import { Jumbotron } from 'react-bootstrap';
 import QuoteBox from './components/QuoteBox';
 import ButtonRow from './components/ButtonRow';
 import Footer from './components/Footer';
 
-
 function App() {
-  const [currentQuote, setCurrentQuote] = useState({});
+  const [quotes, setQuotes] = useState([{character: "", quote: ""}]);
+  const [currentQuote, setCurrentQuote] = useState({character: "", quote: ""});
   const [isDisabled, toggleDisabled] = useState(false);
-  const { quotes } = data;
   
   // gets random number between 0 and [max - 1])
   function getRandomNumber(max) {
@@ -23,20 +22,35 @@ function App() {
     return quotes[getRandomNumber(quotes.length)];
   }
 
+  // grab quotes & set state
+  async function fetchQuotes() {
+    const url = "https://thesimpsonsquoteapi.glitch.me/quotes?count=10";
+    const res = await fetch(url); 
+    const jsonData = await res.json();
+    setQuotes(jsonData);
+  }
+
   // update state + display new quote
-  const displayQuote = () => {
+  function displayQuote() {
     toggleDisabled(true); // disable button
-    setCurrentQuote(getRandomQuote());
+    setCurrentQuote(getRandomQuote()); // get random quote & set state
     setTimeout(() => toggleDisabled(false), 450); // re-enable button
   }
 
-  // run displayQuote on initial render
+  // fetch quotes on initial load
   useEffect(() => {
-    displayQuote();
+    fetchQuotes();
   }, [])
 
-  const { author, quote } = currentQuote;
+  // display quote once quotes has been updated
+  useEffect(() => {
+    displayQuote();
+    // eslint-disable-next-line
+  }, [quotes])
 
+
+  const { character: author, quote } = currentQuote;
+  
   return (
     <div>
       <Jumbotron className="text-center">
